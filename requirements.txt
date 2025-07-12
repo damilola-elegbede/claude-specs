@@ -1,0 +1,8 @@
+# Python dependencies for Claude Specifications Repository
+
+# Currently using only Python standard library
+# Add dependencies here as needed
+
+# Example future dependencies:
+# pyyaml>=6.0  # For YAML parsing if needed
+# jsonschema>=4.0  # For JSON schema validation if needed
