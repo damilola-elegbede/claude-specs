@@ -1,0 +1,36 @@
+# Pre-commit hooks for Claude Specifications Repository
+# See https://pre-commit.com for more information
+
+repos:
+  # General code quality hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: mixed-line-ending
+
+  # Markdown linting
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.42.0
+    hooks:
+      - id: markdownlint
+        args: [--config, .markdownlint.json]
+
+  # Custom compliance testing
+  - repo: local
+    hooks:
+      - id: claude-spec-compliance
+        name: Claude Specification Compliance Test
+        entry: python tests/test_compliance.py
+        language: python
+        files: \.(md)$
+        exclude: ^(README\.md|TEMPLATE\.md|\.github/)
+        pass_filenames: false
+        always_run: false
+        stages: [pre-commit]
+        verbose: true

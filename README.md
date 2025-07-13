@@ -74,6 +74,25 @@ python tests/test_compliance.py
 
 # Test a specific specification
 python -c "from pathlib import Path; from tests.test_compliance import SpecificationTester; tester = SpecificationTester(Path('.')); tester.test_specification(Path('path/to/spec.md'))"
+
+# Run pre-commit hooks manually
+pre-commit run --all-files
+```
+
+### Pre-commit Hooks
+
+Pre-commit hooks are installed to run compliance tests before each commit:
+
+```bash
+# Install pre-commit (one-time setup)
+pipx install pre-commit
+
+# Install hooks in repository (one-time setup)
+pre-commit install
+
+# Hooks will now run automatically on git commit
+# To run manually:
+pre-commit run --all-files
 ```
 
 ## Contributing

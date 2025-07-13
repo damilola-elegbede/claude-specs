@@ -1,8 +1,11 @@
 # Python dependencies for Claude Specifications Repository
 
-# Currently using only Python standard library
-# Add dependencies here as needed
+# Currently using only Python standard library for the compliance tests
+# Pre-commit is installed globally via pipx and doesn't need to be in requirements.txt
 
-# Example future dependencies:
+# Future dependencies can be added here as needed:
 # pyyaml>=6.0  # For YAML parsing if needed
 # jsonschema>=4.0  # For JSON schema validation if needed
+
+# Note: pre-commit is installed globally with:
+# pipx install pre-commit
