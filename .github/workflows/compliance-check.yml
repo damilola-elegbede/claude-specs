@@ -10,6 +10,11 @@ on:
       - 'tests/**'
       - '.github/workflows/compliance-check.yml'
 
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 jobs:
   compliance-test:
     runs-on: ubuntu-latest
